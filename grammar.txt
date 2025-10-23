@@ -1,0 +1,35 @@
+# Gramática para parsing de frases simples en inglés
+# Proyecto 2 - Teoría de la Computación 2025
+
+# Símbolo inicial
+S -> NP VP
+
+# Frases verbales
+VP -> VP PP
+VP -> V NP
+VP -> cooks | drinks | eats | cuts
+
+# Frases preposicionales
+PP -> P NP
+
+# Frases nominales
+NP -> Det N
+NP -> he | she
+
+# Verbos
+V -> cooks | drinks | eats | cuts
+
+# Preposiciones
+P -> in | with
+
+# Sustantivos - Animales
+N -> cat | dog
+
+# Sustantivos - Comida y bebida
+N -> beer | cake | juice | meat | soup
+
+# Sustantivos - Utensilios
+N -> fork | knife | oven | spoon
+
+# Determinantes
+Det -> a | the
