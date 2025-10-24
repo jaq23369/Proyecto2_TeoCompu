@@ -1,5 +1,5 @@
 ###############################################################################
-# Joel Antonio Jaquez López - 23369 y Juan Francisco Martínez - 23611       #
+# Joel Antonio Jaquez López - 23369 y Juan Francisco Martínez - 23617       #
 # Proyecto 2 - Implementación de CYK (Cocke-Younger-Kasami)                 #
 # con Forma Normal de Chomsky y programación dinámica                       #
 ###############################################################################
@@ -350,7 +350,7 @@ class CNFConverter:
                     # Producción A -> a (ya está en CNF)
                     new_productions[lhs].append(rhs)
                 
-                elif len(rhs) == 2:
+                else:
                     # Revisamos si hay terminales que necesiten reemplazo
                     new_rhs = []
                     for symbol in rhs:
@@ -366,10 +366,7 @@ class CNFConverter:
                         else:
                             new_rhs.append(symbol)
                     new_productions[lhs].append(new_rhs)
-                else:
-                    # Producción larga, la manejamos en el siguiente paso
-                    new_productions[lhs].append(rhs)
-        
+
         self.grammar.productions = new_productions
         return terminals_replaced
     

@@ -5,6 +5,10 @@ Autores:
 - Joel Antonio Jaquez López — 23369
 - Juan Francisco Martínez — 23617
 
+## Video de Presentación
+
+[Ver presentación en YouTube](https://youtu.be/EoV0pymkbjg)
+
 ## Descripción
 
 Este proyecto implementa el algoritmo CYK (Cocke–Younger–Kasami) para el parsing de frases usando una gramática libre de contexto (CFG) convertida a la Forma Normal de Chomsky (CNF). El programa está escrito en Python y contiene:
@@ -30,7 +34,7 @@ La gramática de ejemplo está en inglés y viene cargada por defecto (pronombre
 Abrir una terminal (PowerShell en Windows) en la carpeta del proyecto y ejecutar:
 
 ```powershell
-python CYK.py
+python CYK.py grammar.txt
 ```
 
 El programa mostrará la gramática original, la gramática convertida a CNF y un menú con opciones:
@@ -67,7 +71,7 @@ Frases de ejemplo válidas:
 
 ```powershell
 # Ejecutar el programa
-python CYK.py
+python CYK.py grammar.txt
 
 # En el menú seleccionar "2" y luego ingresar, por ejemplo:
 she eats a cake
@@ -81,8 +85,8 @@ she eats a cake
 
 ## Notas y limitaciones
 
-- La gramática está embebida en `CYK.py`. Para probar otras gramáticas o vocabularios, modifique la función `create_english_grammar()` o cree una función similar.
-- El conversor a CNF implementado es simple y cubre casos básicos: reemplazo de terminales en producciones binarias y descomposición de producciones largas. No gestiona explícitamente producciones epsilon ni eliminación de símbolos inaccesibles/useless.
+- El programa lee gramáticas desde archivos de texto (como `grammar.txt` o `1.txt`). La gramática debe seguir el formato especificado con producciones separadas por `|`.
+- El conversor a CNF implementa los 5 pasos estándar de conversión: eliminación de símbolos inútiles (useless), eliminación de producciones epsilon (anulables), eliminación de producciones unitarias, reemplazo de terminales en producciones binarias, y descomposición de producciones largas.
 - El árbol de parsing construido usa el primer back-pointer que encuentre; para gramáticas ambiguas puede no mostrar todas las derivaciones posibles.
 
 ## Verificación rápida de sintaxis
